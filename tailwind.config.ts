@@ -11,6 +11,20 @@ export default {
         sm: ".1875rem", /* 3px */
       },
       colors: {
+        brand: {
+          DEFAULT: "hsl(354 80% 51%)", // Crimson Red #E61E32
+          foreground: "hsl(0 0% 100%)",
+          50: "hsl(354 100% 97%)",
+          100: "hsl(354 100% 94%)",
+          200: "hsl(354 90% 88%)",
+          300: "hsl(354 85% 78%)",
+          400: "hsl(354 80% 64%)",
+          500: "hsl(354 80% 51%)", // Primary
+          600: "hsl(354 75% 45%)",
+          700: "hsl(354 70% 38%)",
+          800: "hsl(354 65% 32%)",
+          900: "hsl(354 60% 28%)",
+        },
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
@@ -86,6 +100,8 @@ export default {
         sans: ["var(--font-sans)"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
+        display: ["'Outfit'", "sans-serif"],
+        body: ["'DM Sans'", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
