@@ -1,0 +1,309 @@
+Project Name
+
+ClientOps – Premium Lead Management CRM
+
+🎯 Objective
+
+Build a production-quality full-stack CRM web application named ClientOps for managing leads generated from website contact forms.
+This project is intended for internship evaluation, so it must demonstrate professional UI/UX, real business workflows, clean animations, and scalable architecture.
+
+🎨 DESIGN SYSTEM (STRICT — DO NOT DEVIATE)
+Primary Color Palette
+
+Black → #000000
+
+Crimson Red → #E61E32
+
+Pure White → #FFFFFF
+
+Steel Grey → #B3B3B3
+
+Theme Support (IMPORTANT)
+
+Implement Light Mode & Dark Mode
+
+Theme toggle in navbar
+
+Persist theme preference (localStorage)
+
+Glass effects must adapt correctly in both modes
+
+🧊 LIQUID GLASS UI (VERY IMPORTANT)
+
+The navbar and key UI surfaces must use true glassmorphism:
+
+Semi-transparent background
+
+backdrop-filter: blur(...)
+
+Subtle border
+
+Soft shadow
+
+No opacity bugs
+
+Must work in both light and dark mode
+
+Navbar:
+
+Fixed at top
+
+Left: ClientOps logo (logo will be uploaded by user)
+
+Center: Dashboard | Leads | Analytics
+
+Right: Theme toggle + Logout
+
+✨ ANIMATIONS & TRANSITIONS (MANDATORY)
+
+Use Framer Motion or CSS transitions with restraint:
+
+Page transitions (fade + slight slide)
+
+Button hover (scale + shadow)
+
+Card hover elevation
+
+Timeline entry slide-in
+
+Chart load animation
+
+Theme toggle smooth transition
+
+Animations must be:
+
+Smooth (no jank)
+
+Professional
+
+Fast (GPU-friendly)
+
+Consistent across app
+
+⏳ LOADING SCREEN (MANDATORY)
+
+Before app initializes:
+
+Full-screen loading page
+
+Display uploaded ClientOps logo
+
+Small text below: “Loading ClientOps…”
+
+Subtle spinner or pulse animation
+
+Fade transition into app
+
+🏠 LANDING / HERO PAGE (PUBLIC)
+
+Before login, show a clean landing page:
+
+Hero Section:
+
+Large headline:
+ClientOps – Smart Lead Operations
+
+Subtext explaining value
+
+CTA button: Admin Login
+
+Premium spacing, minimal clutter
+
+Smooth entrance animation
+
+🔐 AUTHENTICATION
+
+Secure admin login
+
+Email + password
+
+JWT authentication
+
+Protected routes
+
+Redirect unauthorized users
+
+🖥️ FRONTEND (React.js)
+📊 DASHBOARD (ANALYTICS FOCUS)
+
+Show KPI cards:
+
+Total Leads
+
+New Leads
+
+Converted Leads
+
+Conversion Rate %
+
+Charts (important):
+
+Pie chart: Leads by status
+
+Bar/line chart: Leads over time
+
+Use colorful but tasteful colors
+
+Charts must animate smoothly
+
+Responsive & crisp
+
+📋 LEADS LIST PAGE
+
+Table with:
+
+Name
+
+Email
+
+Source
+
+Status (editable dropdown)
+
+Follow-up date
+
+Action button
+
+Features:
+
+Overdue follow-ups highlighted
+
+“Due Today” badge
+
+Smooth row hover effects
+
+Pagination
+
+🧾 LEAD DETAIL PAGE (CORE FEATURE)
+📝 Notes
+
+Add notes
+
+Timestamped
+
+Clean card layout
+
+⭐ FOLLOW-UP REMINDERS
+
+Date picker
+
+Optional description
+
+Auto-detect overdue / today
+
+Visual indicators
+
+Stored in database
+
+🔁 STATUS HISTORY TRACKING
+
+Track:
+
+Old status
+
+New status
+
+Timestamp
+
+Display:
+
+Dedicated section
+
+Also reflected in timeline
+
+📍 ACTIVITY TIMELINE
+
+Vertical timeline with:
+
+Lead creation
+
+Status changes
+
+Notes
+
+Follow-ups
+
+Each entry:
+
+Icon
+
+Text
+
+Timestamp
+
+Smooth slide-in animation
+
+⚙️ BACKEND (Node.js + Express)
+APIs:
+
+Auth
+
+Lead CRUD
+
+Notes
+
+Follow-ups
+
+Status updates
+
+Activity logging
+
+Dashboard analytics
+
+🗄️ DATABASE (MongoDB Preferred)
+
+Collections:
+
+Admins
+
+Leads
+
+Notes
+
+StatusHistory
+
+Activities
+
+All actions must update:
+
+Main data
+
+Status history
+
+Activity timeline
+
+📈 ANALYTICS LOGIC
+
+Aggregate leads by status
+
+Compute conversion rate
+
+Time-based grouping for charts
+
+🧪 QUALITY STANDARDS
+
+Clean folder structure
+
+Environment variables
+
+Error handling
+
+Input validation
+
+Responsive layout
+
+Production-ready code
+
+🎯 FINAL EXPECTATION
+
+Generate a fully working CRM that:
+
+Looks like a real SaaS product
+
+Has smooth UX
+
+Uses glassmorphism correctly
+
+Supports light & dark mode
+
+Is internship-ready
