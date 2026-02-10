@@ -1,0 +1,162 @@
+LIQUID GLASS EFFECT (MAKE IT MORE PROMINENT)
+
+Enhance the glassmorphism across the app, especially for:
+
+Navbar
+
+Cards
+
+Modals
+
+Side panels
+
+Requirements:
+
+Stronger backdrop-filter: blur() for a liquid-glass look
+
+Subtle gradient translucency instead of flat transparency
+
+Fine border using low-opacity white/black depending on theme
+
+Soft layered shadows to create depth
+
+Glass surfaces must clearly float above the background
+
+Glass effects must:
+
+Look premium, not foggy
+
+Adapt correctly to light and dark mode
+
+Never reduce text readability
+
+🎨 COLOR DEPTH & ACCENT POLISH
+Crimson Red Enhancement
+
+Use a deeper, richer crimson red feel for accents:
+
+Primary buttons
+
+Active states
+
+Chart highlights
+
+Status indicators
+
+Rules:
+
+Red should feel bold and confident, not bright or neon
+
+Use subtle gradients or shadows to add depth
+
+Never overpower the UI — use red strategically
+
+⏳ PRE-LOGIN LOADING SCREEN (VERY IMPORTANT)
+
+Add a standalone loading screen before the login page:
+
+Full-screen background
+
+Centered ClientOps logo (logo will be uploaded by user)
+
+Small text below logo:
+“Loading ClientOps…”
+
+Minimal spinner or pulse animation
+
+Smooth fade-out transition into login/landing page
+
+This loading screen must:
+
+Appear only once on app initialization
+
+Feel clean, calm, and premium
+
+✨ MICROINTERACTIONS (MAKE UI FEEL ALIVE)
+Button Ripple Effects
+
+Add subtle ripple animation on button click
+
+Ripple should originate from click position
+
+Works in both light and dark mode
+
+No harsh flashes or heavy effects
+
+Toggle Animations
+
+For:
+
+Theme switch (Light / Dark)
+
+Status toggles
+
+Filters
+
+Requirements:
+
+Smooth sliding motion
+
+Soft easing
+
+Visual feedback on interaction
+
+Smooth Focus States (VERY IMPORTANT)
+
+For:
+
+Inputs
+
+Textareas
+
+Dropdowns
+
+Buttons
+
+Focus behavior:
+
+Soft glow or border transition
+
+No default harsh browser outlines
+
+Focus states must be accessible and visible
+
+Match the red accent subtly
+
+🧠 LIFELIKE UI BEHAVIOR (SaaS STANDARD)
+
+Hover states must feel intentional, not instant
+
+Slight delays and easing for transitions
+
+Cards gently lift on hover
+
+Icons subtly animate on interaction
+
+Nothing flashy. Everything calm, confident, and professional.
+
+🌓 THEME TRANSITION POLISH (LIGHT ↔ DARK)
+
+Smooth animated transition between themes
+
+No sudden color jumps
+
+Glass effects adapt instantly
+
+Charts update colors dynamically
+
+Theme changes must feel premium and deliberate.
+
+🎯 FINAL UI GOAL
+
+The UI should:
+
+Feel like a real SaaS product
+
+Look polished even without data
+
+Be impressive in a screen share
+
+Communicate quality instantly
+
+This UI polish is as important as backend logic.
