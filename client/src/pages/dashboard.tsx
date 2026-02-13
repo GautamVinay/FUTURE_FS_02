@@ -17,7 +17,7 @@ import { format } from "date-fns";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useState, useEffect } from "react";
+import * as React from "react";
 
 const COLORS = ['#E61E32', '#F59E0B', '#10B981', '#3B82F6', '#8B5CF6'];
 
