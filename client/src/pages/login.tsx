@@ -91,7 +91,7 @@ export default function LoginPage() {
         </Card>
         
         <p className="text-center text-xs text-muted-foreground/50 mt-8 font-medium">
-          © 2024 CLIENTOPS CRM. ALL RIGHTS RESERVED.
+          2026 CLIENTOPS BY ECLIPSE. ALL RIGHTS RESERVED.
         </p>
       </motion.div>
     </div>
