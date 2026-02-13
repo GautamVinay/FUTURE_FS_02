@@ -14,14 +14,14 @@ import { useAuth } from "@/hooks/use-auth";
 import { AnimatedBackground } from "@/components/animated-background";
 import { LoadingScreen } from "@/components/loading-screen";
 import { AnimatePresence } from "framer-motion";
-import logo from "@assets/LOGO-1_1770995498064.png";
+import { useState, useEffect } from "react";
 
 // Protected Route Wrapper
 function ProtectedRoute({ component: Component }: { component: React.ComponentType }) {
   const { user, isLoading } = useAuth();
 
   if (isLoading) {
-    return <LoadingScreen />;
+    return null; // Handled by App level loader
   }
 
   if (!user) {
@@ -37,11 +37,21 @@ function ProtectedRoute({ component: Component }: { component: React.ComponentTy
 }
 
 function Router() {
-  const { isLoading } = useAuth();
+  const { isLoading: isAuthLoading } = useAuth();
+  const [isSplashLoading, setIsSplashLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsSplashLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const showLoading = isAuthLoading || isSplashLoading;
   
   return (
     <AnimatePresence mode="wait">
-      {isLoading ? (
+      {showLoading ? (
         <LoadingScreen key="loading" />
       ) : (
         <Switch key="router">
@@ -71,8 +81,10 @@ export default function App() {
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <Router />
-          <Toaster />
+          <div className="relative min-h-screen font-sans selection:bg-primary/20 selection:text-primary">
+            <Router />
+            <Toaster />
+          </div>
         </TooltipProvider>
       </QueryClientProvider>
     </ThemeProvider>

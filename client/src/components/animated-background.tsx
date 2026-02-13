@@ -57,13 +57,13 @@ export function AnimatedBackground() {
         const dotY = line.y + Math.sin(dotX * line.frequency + line.phase) * line.amplitude;
         
         ctx.beginPath();
-        ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.1)';
+        ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.15)';
         ctx.arc(dotX, dotY, 3, 0, Math.PI * 2);
         ctx.fill();
         
         // Glow effect
         if (isDark) {
-          ctx.shadowBlur = 10;
+          ctx.shadowBlur = 15;
           ctx.shadowColor = line.color;
           ctx.stroke();
           ctx.shadowBlur = 0;

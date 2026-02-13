@@ -1,0 +1,217 @@
+Upgrade the CRM web application with the following UI, animation, dashboard, analytics, and real-time behavior improvements.
+All features must be fully implemented — no placeholders.
+
+1️⃣ USE EXISTING REAL-TIME ANIMATED BACKGROUND GLOBALLY
+
+The login page already contains a real-time animated background wallpaper.
+
+Required Change
+
+Reuse that exact existing animated background component
+
+Apply it to the entire CRM:
+
+Dashboard
+
+Analytics page
+
+All main feature pages
+
+Settings/Profile pages
+
+Login page (keep as is)
+
+Implementation Instructions
+
+Do NOT recreate the animation.
+
+Extract it into a reusable component/module.
+
+Wrap the main app layout with it so every page inherits the background.
+
+Ensure it sits behind all UI using proper z-index.
+
+Ensure it does not block inputs, clicks, or scrolling.
+
+Ensure performance remains smooth.
+
+Goal: one consistent animated background across the full product.
+
+2️⃣ LOADING SCREEN WITH MINIMUM DURATION CONTROL
+
+Modify the splash/loading screen:
+
+Behavior
+
+Show immediately on app start.
+
+Remain visible for minimum 2–3 seconds.
+
+If data/API loading takes longer, keep it visible until finished.
+
+Only transition when:
+
+timer finished AND
+
+required data loaded.
+
+Transition
+
+Smooth fade out → fade in app.
+
+Visuals
+
+Center logo
+
+Floating motion (3–4s loop, ease-in-out)
+
+White rounded loading bar with glow
+
+Smooth progress animation
+
+Make this a reusable component.
+
+3️⃣ APPLE-STYLE GLASS UI UPGRADE
+
+Enhance visual styling across:
+
+Sidebar
+
+Navbar
+
+Cards
+
+Dashboard panels
+
+Modals
+
+Forms
+
+Requirements
+
+Strong backdrop blur
+
+Semi-transparent surfaces
+
+Soft borders
+
+Inner highlights
+
+Depth shadows
+
+Smooth hover states
+
+Goal: real enterprise SaaS look inspired by Apple UI.
+
+4️⃣ DASHBOARD — ADD REAL CONTENT
+
+Add real CRM widgets.
+
+Metric Cards (with animated counters)
+
+Total Clients
+
+Active Deals
+
+Revenue This Month
+
+Pending Tasks
+
+Conversion Rate
+
+Support Tickets
+
+New Leads Today
+
+Each card includes:
+
+icon
+
+label
+
+value
+
+trend indicator
+
+Additional Sections
+Activity Feed
+
+Shows latest actions
+
+Auto-updates
+
+Animated entries
+
+Notifications Panel
+
+Alerts
+
+Badge counters
+
+Scrollable list
+
+5️⃣ ANALYTICS PAGE — FULL CHART SYSTEM
+
+Add professional charts:
+
+Required Charts
+
+Sales Trend Line Graph (animated)
+
+Revenue Pie Chart (with tooltips)
+
+Client Source Bar Chart
+
+Activity Timeline Graph
+
+Real-Time Behavior
+
+Charts update periodically
+
+Animate value transitions
+
+Numbers count smoothly
+
+Goal: analytics page feels live and interactive.
+
+6️⃣ ADMIN PROFILE EDIT FEATURE
+
+Add Edit Details button.
+
+Editable Fields
+
+Name
+
+Username
+
+Admin Code
+
+Email
+
+Requirements
+
+Glass modal UI
+
+Validation
+
+Save + success feedback
+
+Cancel option
+
+Persist to backend/state
+
+Reusable component required.
+
+7️⃣ PERFORMANCE RULES
+
+Reuse existing background animation (do not duplicate logic)
+
+Ensure animations remain smooth
+
+Avoid heavy libraries
+
+Lazy-load charts
+
+Maintain responsiveness
+
+Preserve existing functionality

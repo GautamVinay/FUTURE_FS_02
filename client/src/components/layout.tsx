@@ -30,9 +30,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const NavLink = ({ href, icon: Icon, label }: { href: string; icon: any; label: string }) => (
     <Link href={href}>
       <div 
-        className={`flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer transition-all duration-200 ${
+        className={`flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer transition-all duration-300 hover-elevate active-elevate-2 ${
           isActive(href) 
-            ? "bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 shadow-lg text-primary font-medium" 
+            ? "bg-primary/10 dark:bg-primary/20 backdrop-blur-xl border border-primary/20 shadow-lg text-primary font-semibold" 
             : "text-muted-foreground hover:text-foreground hover:bg-white/5"
         }`}
       >
@@ -43,17 +43,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
+    <div className="min-h-screen bg-transparent text-foreground flex flex-col font-sans selection:bg-primary/20">
       {/* Navbar */}
-      <nav className="glass-panel px-4 md:px-6 lg:px-8 py-3 flex items-center justify-between border-b border-white/10 bg-white/5 backdrop-blur-xl sticky top-0 z-50">
+      <nav className="px-4 md:px-6 lg:px-8 py-3 flex items-center justify-between border-b border-white/10 bg-white/5 dark:bg-black/20 backdrop-blur-2xl sticky top-0 z-50 shadow-sm">
         <div className="flex items-center gap-3">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer group">
               <div className="relative">
-                <div className="absolute inset-0 bg-primary/20 blur-lg rounded-full group-hover:bg-primary/30 transition-all duration-500" />
-                <img src={logo} alt="ClientOps" className="w-8 h-8 md:w-10 md:h-10 relative z-10 object-contain" />
+                <div className="absolute inset-0 bg-primary/30 blur-xl rounded-full group-hover:bg-primary/50 transition-all duration-500 scale-125" />
+                <img src={logo} alt="ClientOps" className="w-8 h-8 md:w-10 md:h-10 relative z-10 object-contain drop-shadow-2xl" />
               </div>
-              <span className="font-display font-bold text-xl md:text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
+              <span className="font-display font-bold text-xl md:text-2xl tracking-tight text-gradient">
                 ClientOps
               </span>
             </div>
@@ -61,23 +61,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-2 lg:gap-6">
+        <div className="hidden md:flex items-center gap-2 lg:gap-4 bg-white/5 dark:bg-black/10 p-1 rounded-xl border border-white/10 backdrop-blur-md">
           <NavLink href="/dashboard" icon={LayoutDashboard} label="Dashboard" />
           <NavLink href="/leads" icon={Users} label="Leads" />
           <NavLink href="/analytics" icon={PieChart} label="Analytics" />
         </div>
 
-        <div className="flex gap-2 px-2">
-          <ThemeToggle />
-          <EditDetailsDialog />
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 bg-white/5 dark:bg-black/10 p-1 rounded-xl border border-white/10 backdrop-blur-md">
+            <ThemeToggle />
+            <EditDetailsDialog />
+          </div>
           <Button 
             variant="ghost" 
             size="sm" 
             onClick={() => logout()}
-            className="text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+            className="text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-xl"
           >
             <LogOut className="w-4 h-4 mr-2" />
-            Logout
+            <span className="hidden sm:inline">Logout</span>
           </Button>
         </div>
 
