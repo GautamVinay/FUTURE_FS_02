@@ -1,0 +1,278 @@
+Upgrade the CRM web application with the following UI, animation, dashboard, analytics, and real-time behavior improvements.
+All features must be fully implemented, not placeholders.
+
+1️⃣ LOADING SCREEN (WITH MINIMUM DURATION CONTROL)
+
+Modify the splash/loading screen so it behaves professionally:
+
+Behavior
+
+Show loading screen immediately when app starts.
+
+Keep it visible for minimum 2–3 seconds, even if app loads faster.
+
+If API/data loading takes longer, keep it visible until data is ready.
+
+Only transition when BOTH conditions are met:
+
+minimum timer finished
+
+required app data loaded
+
+Transition
+
+Fade out loading screen smoothly.
+
+Fade in login/dashboard.
+
+No abrupt changes.
+
+Visuals
+
+Center logo.
+
+Floating animation (slow vertical motion, 3–4s loop, ease-in-out).
+
+White loading bar below logo:
+
+rounded corners
+
+subtle glow
+
+smooth progress animation
+
+Architecture
+
+Implement as reusable component.
+
+Controlled by global loading state.
+
+2️⃣ GLOBAL REAL-TIME ANIMATED GRAPH BACKGROUND
+
+Add a reusable animated background component used across:
+
+Login page
+
+Dashboard
+
+Analytics page
+
+All main views
+
+Visual Style
+
+Thin curved lines representing data flow
+
+Small glowing nodes moving along lines
+
+Slow continuous motion
+
+Very low opacity so UI remains readable
+
+Must look like abstract analytics activity
+
+Theme Adaptation
+
+Light mode:
+
+soft blue / purple gradient lines
+
+minimal glow
+
+Dark mode:
+
+neon blue / teal glow
+
+slightly stronger brightness
+
+Technical Requirements
+
+Implement using SVG or Canvas animation (not video/GIF)
+
+GPU-friendly animation only
+
+Responsive to screen size
+
+Positioned behind UI with z-index layering
+
+Should never block clicks or inputs
+
+Make it a reusable component.
+
+3️⃣ PREMIUM APPLE-STYLE GLASS UI
+
+Upgrade visual styling across:
+
+Sidebar
+
+Navbar
+
+Dashboard cards
+
+Analytics panels
+
+Forms
+
+Modals
+
+Glass Requirements
+
+Strong backdrop blur
+
+Semi-transparent background layers
+
+Subtle white borders
+
+Soft inner highlights
+
+Floating depth shadows
+
+Smooth hover transitions
+
+Goal
+
+Look like a real enterprise SaaS dashboard inspired by Apple UI, not basic glassmorphism.
+
+4️⃣ DASHBOARD — ADD REAL CONTENT & LIVE FEEL
+
+Expand dashboard with real CRM widgets.
+
+Add Metric Cards
+
+Each card must include:
+
+icon
+
+label
+
+numeric value
+
+animated counter on load
+
+trend indicator (+/−%)
+
+Required cards:
+
+Total Clients
+
+Active Deals
+
+Revenue This Month
+
+Pending Tasks
+
+Conversion Rate
+
+Support Tickets
+
+New Leads Today
+
+Add Sections
+Recent Activity Feed
+
+shows latest CRM actions
+
+auto-updates periodically
+
+animated entry appearance
+
+Notifications Panel
+
+alerts for deals/tasks/messages
+
+badge counters
+
+scrollable list
+
+5️⃣ ANALYTICS PAGE — FULL REAL-TIME CHART SYSTEM
+
+Implement multiple professional charts.
+
+Charts Required
+1. Sales Trend Line Graph
+
+animated on load
+
+smooth transitions when data updates
+
+shows weekly/monthly trend
+
+2. Revenue Distribution Pie Chart
+
+animated entry
+
+hover tooltips
+
+responsive legend
+
+3. Client Source Bar Chart
+
+shows origin of leads
+
+animated bar growth
+
+4. Activity Timeline Graph
+
+shows recent CRM activity volume
+
+smooth animated updates
+
+Real-Time Updates
+
+Charts must update automatically:
+
+Use WebSockets OR periodic polling simulation
+
+Values update every few seconds
+
+Animate transitions smoothly
+
+Numbers increment instead of jumping
+
+Goal: analytics page feels alive and data-driven.
+
+6️⃣ ADMIN PROFILE EDITING FEATURE
+
+Add an Edit Details button in admin profile/header.
+
+When clicked:
+
+Open a glass-style modal or profile page.
+
+Editable Fields
+
+Name
+
+Username
+
+Admin Code
+
+Email
+
+Requirements
+
+Validation rules
+
+Save button with success feedback
+
+Cancel option
+
+Persist changes to backend/database/state
+
+Responsive layout
+
+Make this a reusable component.
+
+7️⃣ PERFORMANCE & ENGINEERING RULES
+
+Use lightweight animation methods
+
+Avoid heavy libraries or videos
+
+Lazy-load charts if needed
+
+Ensure smooth 60fps animations
+
+Maintain responsiveness
+
+Do not break existing CRM logic
