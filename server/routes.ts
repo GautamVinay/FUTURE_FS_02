@@ -93,7 +93,7 @@ export async function registerRoutes(
       if (input.password) {
         input.password = await hashPassword(input.password);
       }
-      const user = await storage.updateUser(req.user!.id, input);
+      const user = await storage.updateUser((req.user as any)!.id, input);
       res.json(user);
     } catch (err) {
       if (err instanceof z.ZodError) {

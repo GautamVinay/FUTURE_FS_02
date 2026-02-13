@@ -34,9 +34,9 @@ export function EditDetailsDialog() {
     resolver: zodResolver(updateUserSchema),
     defaultValues: {
       name: user?.name || "",
-      username: user?.username || "",
-      email: user?.email || "",
-      adminCode: user?.adminCode || "",
+      username: (user as any)?.username || "",
+      email: (user as any)?.email || "",
+      adminCode: (user as any)?.adminCode || "",
     },
   });
 
@@ -83,7 +83,7 @@ export function EditDetailsDialog() {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-white/5 border-white/10" />
+                    <Input {...field} value={field.value || ""} className="bg-white/5 border-white/10" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -96,7 +96,7 @@ export function EditDetailsDialog() {
                 <FormItem>
                   <FormLabel>Username</FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-white/5 border-white/10" />
+                    <Input {...field} value={field.value || ""} className="bg-white/5 border-white/10" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -109,7 +109,7 @@ export function EditDetailsDialog() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input {...field} type="email" className="bg-white/5 border-white/10" />
+                    <Input {...field} type="email" value={field.value || ""} className="bg-white/5 border-white/10" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -122,7 +122,7 @@ export function EditDetailsDialog() {
                 <FormItem>
                   <FormLabel>Admin Code</FormLabel>
                   <FormControl>
-                    <Input {...field} className="bg-white/5 border-white/10" />
+                    <Input {...field} value={field.value || ""} className="bg-white/5 border-white/10" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

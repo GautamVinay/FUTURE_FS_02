@@ -1,7 +1,7 @@
 import { db } from "./db";
 import {
   users, leads, notes, activities,
-  type User, type InsertUser,
+  type User, type InsertUser, type UpdateUserRequest,
   type Lead, type InsertLead, type UpdateLeadRequest,
   type Note, type InsertNote,
   type Activity, type DashboardStats

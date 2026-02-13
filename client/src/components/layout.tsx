@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import logo from "@assets/LOGO-1_1770995498064.png";
 import { EditDetailsDialog } from "./edit-details-dialog";
+import { ThemeToggle } from "./theme-toggle";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
