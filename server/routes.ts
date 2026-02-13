@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
-import { insertLeadSchema } from "@shared/schema";
+import { insertLeadSchema, updateUserSchema } from "@shared/schema";
 import { setupAuth } from "./auth";
 import { scrypt, randomBytes } from "crypto";
 import { promisify } from "util";
@@ -85,6 +85,23 @@ export async function registerRoutes(
     }
     res.status(401).json({ message: "Unauthorized" });
   };
+
+  // === USERS ===
+  app.patch("/api/user", requireAuth, async (req, res) => {
+    try {
+      const input = updateUserSchema.parse(req.body);
+      if (input.password) {
+        input.password = await hashPassword(input.password);
+      }
+      const user = await storage.updateUser(req.user!.id, input);
+      res.json(user);
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        return res.status(400).json({ message: err.errors[0].message });
+      }
+      res.status(500).json({ message: "Failed to update user" });
+    }
+  });
 
   // Seed database on startup
   await seedDatabase();

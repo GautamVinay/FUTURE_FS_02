@@ -10,6 +10,8 @@ export const users = pgTable("users", {
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
   name: text("name").notNull(),
+  adminCode: text("admin_code"),
+  email: text("email"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -64,6 +66,8 @@ export const activitiesRelations = relations(activities, ({ one }) => ({
 // === BASE SCHEMAS ===
 
 export const insertUserSchema = createInsertSchema(users).omit({ id: true, createdAt: true });
+export const updateUserSchema = insertUserSchema.partial();
+export type UpdateUserRequest = z.infer<typeof updateUserSchema>;
 export const insertLeadSchema = createInsertSchema(leads).omit({ id: true, createdAt: true, updatedAt: true });
 export const insertNoteSchema = createInsertSchema(notes).omit({ id: true, createdAt: true });
 export const insertActivitySchema = createInsertSchema(activities).omit({ id: true, createdAt: true });

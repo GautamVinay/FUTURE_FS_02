@@ -1,0 +1,214 @@
+Good idea — this will make your CRM look seriously premium, but the prompt needs to be very precise so Replit doesn’t generate something messy or heavy.
+
+Here’s your FULL FINAL REPLIT PROMPT (with animated graph background + everything so far) 👇
+
+🚀 FINAL REPLIT AI PROMPT — PREMIUM CRM UI UPGRADE
+
+Upgrade the CRM web application with the following visual, animation, and admin feature improvements. Focus on performance, smoothness, and a premium SaaS look.
+
+1️⃣ Replace Logo Everywhere
+
+Replace the existing logo across:
+
+Navbar
+
+Sidebar header
+
+Login page
+
+Loading screen
+
+Use the uploaded image file.
+
+Maintain transparency and aspect ratio.
+
+Ensure responsive scaling.
+
+2️⃣ Premium Loading / Splash Screen
+
+Create a reusable loading screen shown before login/dashboard loads.
+
+Requirements:
+
+Same background color as login page.
+
+Center the logo.
+
+Animate logo floating up/down slowly:
+
+Smooth infinite animation
+
+3–4s loop
+
+Ease-in-out
+
+Add white loading bar below logo:
+
+Rounded corners
+
+Soft glow
+
+Smooth animated progress
+
+Fade transition into the app.
+
+3️⃣ Apple-Style Liquid Glass UI Upgrade
+
+Enhance glassmorphism across the CRM:
+
+Apply to:
+
+Sidebar
+
+Navbar
+
+Cards
+
+Modals
+
+Forms
+
+Dashboard panels
+
+Glass styling must include:
+
+Strong backdrop blur
+
+Semi-transparent surfaces
+
+Subtle light borders
+
+Soft inner highlights
+
+Floating shadows
+
+Smooth hover effects
+
+Depth layering between panels
+
+Design goal: Apple iOS / macOS inspired enterprise SaaS look
+
+Avoid flashy animations.
+
+4️⃣ Admin Edit Details Feature
+
+Add a “Edit Details” button in the admin dashboard/profile area.
+
+When clicked:
+Open a glass-style modal or page allowing the admin to edit:
+
+Name
+
+Username
+
+Admin Code
+
+Email
+
+Include:
+
+Validation
+
+Save button with success feedback
+
+Cancel button
+
+Responsive layout
+
+Persist changes to backend/database
+
+Make this a reusable component.
+
+5️⃣ Real-Time Animated Graph Background (NEW)
+
+Add a subtle animated background to the dashboard and login page that displays moving abstract data graphs, representing CRM analytics activity.
+
+🎯 Visual Style
+
+Use thin smooth line graphs
+
+Curved paths or wave-like analytics lines
+
+Slowly moving nodes/dots along lines
+
+Subtle glowing points to represent data flow
+
+Must remain faint and non-distracting
+
+This is a background decoration, not an actual chart.
+
+🎨 Light Mode Version
+
+Lines: soft blue / purple gradient
+
+Glow: very subtle
+
+Opacity: low (10–20%)
+
+Background remains clean and readable
+
+🌙 Dark Mode Version
+
+Lines: neon blue / teal / violet glow
+
+Slightly stronger glow than light mode
+
+Still subtle and professional
+
+Do NOT overpower UI elements
+
+⚙️ Behavior Requirements
+
+Graph lines should move slowly horizontally or diagonally.
+
+Dots should flow along the lines continuously.
+
+Animation must be:
+
+Smooth
+
+Infinite loop
+
+GPU-friendly
+
+Lightweight
+
+Automatically switch colors based on light/dark mode.
+
+🧠 Technical Implementation
+
+Use Canvas or SVG animation (not heavy video or GIF).
+
+Must be responsive to screen size.
+
+Keep CPU usage minimal.
+
+Place behind content using z-index layering.
+
+Should not interfere with buttons or inputs.
+
+Create this as a reusable AnimatedBackground component.
+
+6️⃣ Performance & Architecture Rules
+
+All new UI elements must be reusable components.
+
+Keep animations GPU-accelerated.
+
+Avoid heavy libraries unless necessary.
+
+Maintain consistent spacing, typography, and colors.
+
+Preserve existing CRM functionality.
+
+🎯 FINAL GOAL
+
+The CRM should feel like:
+
+A real SaaS product
+
+Premium enterprise software
+
+Apple-level polish
+
+Smooth, modern, trustworthy UI

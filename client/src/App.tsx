@@ -11,48 +11,62 @@ import LeadsPage from "@/pages/leads";
 import LeadDetailPage from "@/pages/lead-detail";
 import AnalyticsPage from "@/pages/analytics";
 import { useAuth } from "@/hooks/use-auth";
-import { Loader2 } from "lucide-react";
-import logo from "@assets/image_1770740414805.png";
+import { AnimatedBackground } from "@/components/animated-background";
+import { LoadingScreen } from "@/components/loading-screen";
+import { AnimatePresence } from "framer-motion";
+import logo from "@assets/LOGO-1_1770995498064.png";
 
 // Protected Route Wrapper
 function ProtectedRoute({ component: Component }: { component: React.ComponentType }) {
   const { user, isLoading } = useAuth();
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background gap-4">
-        <img src={logo} alt="Loading" className="w-16 h-16 rounded-xl animate-pulse" />
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-        <p className="text-muted-foreground font-medium">Loading ClientOps...</p>
-      </div>
-    );
+    return <LoadingScreen />;
   }
 
   if (!user) {
     return <Redirect to="/login" />;
   }
 
-  return <Component />;
-}
-
-function Router() {
   return (
-    <Switch>
-      <Route path="/login" component={LoginPage} />
-      
-      {/* Protected Routes */}
-      <Route path="/" component={() => <ProtectedRoute component={Dashboard} />} />
-      <Route path="/dashboard" component={() => <ProtectedRoute component={Dashboard} />} />
-      <Route path="/leads" component={() => <ProtectedRoute component={LeadsPage} />} />
-      <Route path="/leads/:id" component={() => <ProtectedRoute component={LeadDetailPage} />} />
-      <Route path="/analytics" component={() => <ProtectedRoute component={AnalyticsPage} />} />
-      
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <AnimatedBackground />
+      <Component />
+    </>
   );
 }
 
-function App() {
+function Router() {
+  const { isLoading } = useAuth();
+  
+  return (
+    <AnimatePresence mode="wait">
+      {isLoading ? (
+        <LoadingScreen key="loading" />
+      ) : (
+        <Switch key="router">
+          <Route path="/login">
+            <div className="relative min-h-screen">
+              <AnimatedBackground />
+              <LoginPage />
+            </div>
+          </Route>
+          
+          {/* Protected Routes */}
+          <Route path="/" component={() => <ProtectedRoute component={Dashboard} />} />
+          <Route path="/dashboard" component={() => <ProtectedRoute component={Dashboard} />} />
+          <Route path="/leads" component={() => <ProtectedRoute component={LeadsPage} />} />
+          <Route path="/leads/:id" component={() => <ProtectedRoute component={LeadDetailPage} />} />
+          <Route path="/analytics" component={() => <ProtectedRoute component={AnalyticsPage} />} />
+          
+          <Route component={NotFound} />
+        </Switch>
+      )}
+    </AnimatePresence>
+  );
+}
+
+export default function App() {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <QueryClientProvider client={queryClient}>
@@ -64,5 +78,3 @@ function App() {
     </ThemeProvider>
   );
 }
-
-export default App;
