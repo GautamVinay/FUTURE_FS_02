@@ -1,0 +1,177 @@
+Update the CRM web application with the following behavior, UI, and analytics enhancements.
+
+1️⃣ Make Loading Screen Last 2–3 Seconds Minimum
+
+Modify the loading/splash screen logic so:
+
+The loading screen stays visible for at least 2–3 seconds, even if the app loads faster.
+
+If backend/API calls take longer, keep it visible until data is ready.
+
+Implement this using:
+
+a minimum timer delay
+
+plus actual loading state
+
+Behavior:
+
+Start timer when app initializes
+
+Wait for:
+
+minimum 2–3 seconds
+
+AND required data to load
+
+Then fade smoothly into login/dashboard
+
+Keep animation smooth and premium.
+
+2️⃣ Add More Dashboard Content (Make CRM Feel Real)
+
+Enhance the dashboard with additional real CRM data panels:
+
+Add cards/widgets for:
+
+Total Clients
+
+Active Deals
+
+Revenue This Month
+
+Pending Tasks
+
+Conversion Rate
+
+Support Tickets Open
+
+Recent Activities feed
+
+Notifications panel
+
+Each card should include:
+
+icon
+
+label
+
+value
+
+small trend indicator (+/− %)
+
+Use glass-style panels.
+
+3️⃣ Upgrade Analytics Page with Real-Time Charts
+
+Enhance the analytics page to include multiple professional charts:
+
+Required Charts
+
+Sales Trend Line Graph
+
+Monthly or weekly trend
+
+Smooth animated line
+
+Revenue Pie Chart
+
+Breakdown by product/service/category
+
+Client Source Bar Chart
+
+Website / Referral / Ads / Direct etc.
+
+Activity Heat or Timeline Graph
+
+Recent CRM actions
+
+All charts must:
+
+animate on load
+
+support real-time updates
+
+be responsive
+
+match theme colors
+
+Use a lightweight chart library suitable for dashboards.
+
+4️⃣ Add Real-Time Data Updates
+
+Simulate or connect to real-time updates:
+
+Numbers on dashboard should update periodically
+
+Charts should animate to new values
+
+Activity feed should append new entries
+
+Use:
+
+WebSockets OR periodic polling
+
+smooth number transitions
+
+animated chart updates
+
+Goal: dashboard feels alive, not static.
+
+5️⃣ Add Animated Graph Background Across Entire App
+
+Add a subtle animated analytics-style background across:
+
+Login page
+
+Dashboard
+
+Analytics page
+
+Design:
+
+thin curved lines representing data flow
+
+small moving nodes/dots along lines
+
+slow movement only
+
+low opacity
+
+non-distracting
+
+Light Mode:
+
+soft blue/purple lines
+
+very faint glow
+
+Dark Mode:
+
+neon blue/teal lines
+
+slightly brighter glow
+
+still subtle
+
+Technical requirements:
+
+Implement using SVG or Canvas animation
+
+Must be GPU-friendly
+
+Must not block interactions
+
+Place behind content with proper z-index
+
+Make it a reusable AnimatedBackground component
+
+6️⃣ Performance Rules
+
+Do not use heavy video or GIF backgrounds
+
+Keep animations smooth at 60fps
+
+Lazy-load charts where possible
+
+Maintain CRM responsiveness
